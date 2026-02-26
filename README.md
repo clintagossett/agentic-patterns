@@ -18,6 +18,7 @@ Snippets are `CLAUDE.md` additions that fix common agent behavior issues.
 
 | Snippet | Description |
 |---------|-------------|
+| [index-navigation](snippets/index-navigation.md) | Teach agents to navigate repos using `_index.md` manifests |
 | [tmux-agent-communication](snippets/tmux-agent-communication.md) | Fix `tmux send-keys` so Enter actually submits |
 
 ### Docs
@@ -43,9 +44,12 @@ Then use it:
 /update-indexes --mode fix
 ```
 
-### tmux communication snippet
+### CLAUDE.md snippets
 
-Copy the markdown block from [snippets/tmux-agent-communication.md](snippets/tmux-agent-communication.md) into your project's `CLAUDE.md` or `~/.claude/CLAUDE.md`.
+Copy the markdown blocks from these files into your project's `CLAUDE.md` or `~/.claude/CLAUDE.md`:
+
+- **[index-navigation](snippets/index-navigation.md)** - Teaches agents to read `_index.md` first, navigate to relevant files, and keep indexes updated
+- **[tmux-agent-communication](snippets/tmux-agent-communication.md)** - Fixes the `send-keys Enter` problem so agents can communicate via tmux
 
 ## Context
 
