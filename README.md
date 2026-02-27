@@ -16,12 +16,14 @@ Skills are reusable capabilities you drop into `.claude/skills/` in your project
 
 ### Snippets
 
-Snippets are `CLAUDE.md` additions that fix common agent behavior issues.
+Snippets are shell config or `CLAUDE.md` additions that fix common agent behavior issues.
 
 | Snippet | Description |
 |---------|-------------|
 | [index-navigation](snippets/index-navigation.md) | Teach agents to navigate repos using `_index.md` manifests |
 | [tmux-agent-communication](snippets/tmux-agent-communication.md) | Reliable agent-to-agent messaging through tmux sessions (fixes the `send-keys Enter` problem) |
+| [ta-alias](snippets/ta-alias.md) | `ta <session>` shorthand with tab completion for tmux session names (Mac and Ubuntu) |
+| [tn-function](snippets/tn-function.md) | `tn <session>` to create tmux sessions with optional path, startup commands, and auto-attach |
 
 ### Docs
 
@@ -46,7 +48,7 @@ Then use it:
 
 ### Snippets
 
-Copy the markdown blocks from snippet files into your project's `CLAUDE.md` or `~/.claude/CLAUDE.md`.
+Copy the code blocks from snippet files into your `CLAUDE.md`, `~/.zshrc`, or `~/.bashrc` as directed by each snippet.
 
 ## Quick Start
 
@@ -55,6 +57,9 @@ Copy [bs-filter](.claude/skills/bs-filter/) into your project's `.claude/skills/
 
 **"I want to set up multiple agents"**
 Copy [tmux-setup](.claude/skills/tmux-setup/) into your project's `.claude/skills/`. Create a `tmux-agents.yml` config and run `/tmux-setup`.
+
+**"Typing `tmux attach -t <session>` every time is painful"**
+Add the [ta-alias](snippets/ta-alias.md) and [tn-function](snippets/tn-function.md) to your shell config. Then it's `tn my-session -p ~/project` to create and `ta <Tab>` to attach.
 
 **"My agents lose focus after reading too many files"**
 Start with [index-navigation](snippets/index-navigation.md) and the [_index.md Specification](docs/index-file-specification.md).
